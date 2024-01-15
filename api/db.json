@@ -1,12 +1,9 @@
 {
-  "posts": [
+  "todos": [
     {
-      "id": 1,
-      "title": "A title"
-    },
-    {
-      "id": 2,
-      "title": "Teste"
+      "id": "fcad",
+      "title": "Estudar javascript",
+      "completed": false
     }
   ]
 }

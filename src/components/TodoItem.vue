@@ -18,7 +18,7 @@ mr-2">
         <input
             type="text"
             placeholder="Digite a sua tarefa"
-            value="Estudar Vue 3"
+            :value="todo.title"
             class="bg-gray-300 placeholder-gray-500
 text-gray-700 font-light focus:outline-none block w-full appearance-none
 leading-normal mr-3"
@@ -27,9 +27,9 @@ leading-normal mr-3"
 
       <div class="ml-auto flex items-center
 justify-center">
-        <button class="focus:outline-none">
+        <button class="focus:outline-none" @click="removeTodo">
           <svg
-              class="ml-3 h-4 w-4 text-gray-500"
+              class="ml-3 h-4 w-4 text-gray-500 hover:text-red-600 duration-200"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -50,3 +50,18 @@ justify-center">
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    todo: {
+      type: Object
+    }
+  },
+  methods: {
+    removeTodo() {
+      this.$store.dispatch('removeTodo', this.todo)
+    }
+  }
+}
+</script>
